@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {TodoListItem} from './TodoListItem'
 import { TodoList } from './TodoList';
 import { AddTodoForm } from './AddTodoForm';
+import './styles.scss';
+
 
 
 const initialTodos: Todo[] = [
@@ -37,10 +39,12 @@ function App() {
     setTodos([...todos, newTodo]);
   }
   return (
-  <>
+  <div className='container'>
+   <div className='todo-list'>
   <TodoList todos={todos} toggleTodo={toggleTodo}/>
   <AddTodoForm addTodo={addTodo}/>
-  </>
+   </div>
+  </div>
   )
 }
 
